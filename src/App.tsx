@@ -102,7 +102,7 @@ function App() {
         <span className="announcement__dot" />
         <span>Eggless & no-maida options</span>
         <span className="announcement__dot" />
-        <span>Made with love in Ahmedabad</span>
+        <span>Made with love in Hyderabad</span>
       </div>
 
       <header className="nav-wrap">
@@ -168,7 +168,7 @@ function App() {
             <div className="story__logo-wrap">
               <div className="story__logo-circle" />
               <img className="story__logo" src="/images/cravebites-logo.jpg" alt="CraveBites Bakery by Nishita logo" />
-              <span className="story__logo-caption">Made with heart<br />in Ahmedabad</span>
+              <span className="story__logo-caption">Made with heart<br />in Hyderabad</span>
             </div>
           </div>
           <div className="story__copy">
