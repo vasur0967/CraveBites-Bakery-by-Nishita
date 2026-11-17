@@ -8,7 +8,6 @@ import {
   Leaf,
   MapPin,
   Menu,
-  MessageCircle,
   Phone,
   Quote,
   Sparkles,
@@ -49,6 +48,14 @@ const reviews = [
 ]
 
 const whatsappNumber = '918118857953'
+
+function WhatsAppIcon({ size = 20 }: { size?: number }) {
+  return (
+    <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.967-.94 1.165-.174.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.134.297-.347.446-.521.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.521-.074-.149-.669-1.61-.916-2.204-.242-.579-.487-.5-.67-.51l-.57-.01c-.198 0-.52.074-.792.372-.273.297-1.04 1.016-1.04 2.476s1.065 2.873 1.213 3.071c.149.198 2.095 3.2 5.075 4.487.709.306 1.262.489 1.693.626.711.226 1.358.194 1.87.118.571-.085 1.758-.719 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347M12.04 2C6.505 2 2 6.505 2 12.04c0 1.77.46 3.43 1.266 4.87L2 22l5.22-1.23a10.04 10.04 0 0 0 4.82 1.23h.005c5.535 0 10.04-4.505 10.04-10.04 0-2.683-1.045-5.205-2.944-7.104A9.98 9.98 0 0 0 12.04 2m.005 18.29h-.004a8.3 8.3 0 0 1-4.226-1.155l-.303-.18-3.102.729.738-3.026-.197-.31a8.27 8.27 0 0 1-1.27-4.308c0-4.59 3.736-8.326 8.33-8.326a8.27 8.27 0 0 1 5.893 2.443 8.27 8.27 0 0 1 2.438 5.897c-.001 4.59-3.737 8.236-8.297 8.236" />
+    </svg>
+  )
+}
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -266,7 +273,7 @@ function App() {
             <p>Tell us what you have in mind. We’ll help you choose the perfect flavour, design, and timeline — all through WhatsApp.</p>
             <div className="enquiry__contact">
               <a href="tel:+918118857953"><Phone size={18} /> +91 81188 57853</a>
-              <a href="https://www.google.com/maps/search/?api=1&query=F+201+Malabar+County+2+Rd+behind+NIRMA+UNIVERSITY+Tragad+Ahmedabad+Gujarat+382470+India" target="_blank" rel="noreferrer"><MapPin size={18} /> F 201, Malabar County 2 Rd,<br />behind NIRMA UNIVERSITY,<br />Tragad, Ahmedabad, Gujarat 382470, India</a>
+              {/* <a href="https://www.google.com/maps/search/?api=1&query=F+201+Malabar+County+2+Rd+behind+NIRMA+UNIVERSITY+Tragad+Ahmedabad+Gujarat+382470+India" target="_blank" rel="noreferrer"><MapPin size={18} /> F 201, Malabar County 2 Rd,<br />behind NIRMA UNIVERSITY,<br />Tragad, Ahmedabad, Gujarat 382470, India</a> */}
             </div>
           </div>
           <div className="enquiry__form-wrap">
@@ -277,7 +284,7 @@ function App() {
                 <div className="form-row"><label>YOUR NAME<input name="name" required placeholder="e.g. Ananya Sharma" /></label><label>PHONE NUMBER<input name="phone" required type="tel" placeholder="+91 00000 00000" /></label></div>
                 <div className="form-row"><label>CAKE IDEA<select name="cake" required defaultValue=""><option value="" disabled>Select a cake</option><option>Birthday cake</option><option>Wedding cake</option><option>Baby shower cake</option><option>Eggless cake</option><option>No-maida / healthy cake</option><option>Custom cake</option></select></label><label>CELEBRATION DATE<input name="date" type="date" /></label></div>
                 <label>Tell us a little more<textarea name="message" rows={3} placeholder="Describe the flavour, colour, size, or design you have in mind..." /></label>
-                <button className="button button--whatsapp" type="submit"><MessageCircle size={19} /> Send enquiry on WhatsApp <ArrowRight size={18} /></button>
+                <button className="button button--whatsapp" type="submit"><WhatsAppIcon size={19} /> Send enquiry on WhatsApp <ArrowRight size={18} /></button>
                 <small className="form-note">By continuing, you agree to send your details through WhatsApp.</small>
               </form>
             )}
@@ -294,7 +301,7 @@ function App() {
         <div className="footer__bottom"><span>© {new Date().getFullYear()} CraveBites Bakery by Nishita</span><span>Made with <Heart size={13} fill="currentColor" /> for sweet moments</span></div>
       </footer>
 
-      <a className="floating-wa" href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer" aria-label="Order on WhatsApp"><MessageCircle size={22} /><span>Order on WhatsApp</span></a>
+      <a className="floating-wa" href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer" aria-label="Order on WhatsApp"><WhatsAppIcon size={22} /><span>Order on WhatsApp</span></a>
     </div>
   )
 }
